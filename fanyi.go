@@ -1,8 +1,13 @@
 package baidufanyi
 
+import (
+	"net/http"
+)
+
 type Fanyi struct {
 	AppID     string
 	SecretKey string
+	client    *http.Client
 }
 
 type ClientOptionFunc func(*Fanyi)
@@ -24,6 +29,10 @@ func newClient(options []ClientOptionFunc) *Fanyi {
 		if v != nil {
 			v(r)
 		}
+	}
+
+	if r.client == nil {
+		r.client = &http.Client{}
 	}
 
 	return r
