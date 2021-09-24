@@ -9,6 +9,8 @@ go sdk for baidu fanyi (docs: https://fanyi-api.baidu.com/doc/21).
 [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/chyroc/baidufanyi)
 [![Go project version](https://badge.fury.io/go/github.com%2Fchyroc%2Fbaidufanyi.svg)](https://badge.fury.io/go/github.com%2Fchyroc%2Fbaidufanyi)
 
+![](./header.jpg)
+
 ## Install
 
 ```shell
