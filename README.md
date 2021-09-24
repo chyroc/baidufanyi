@@ -8,3 +8,35 @@ go sdk for baidu fanyi (docs: https://fanyi-api.baidu.com/doc/21).
 [![Apache-2.0 license](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-blue?logo=go&logoColor=white)](https://pkg.go.dev/github.com/chyroc/baidufanyi)
 [![Go project version](https://badge.fury.io/go/github.com%2Fchyroc%2Fbaidufanyi.svg)](https://badge.fury.io/go/github.com%2Fchyroc%2Fbaidufanyi)
+
+## Install
+
+```shell
+go get github.com/chyroc/baidufanyi
+```
+
+## Usage
+
+### Translate 翻译
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/chyroc/baidufanyi"
+)
+
+func main() {
+	cli := baidufanyi.New(baidufanyi.WithCredential(os.Getenv("BAIDUFANYI_APP_ID"), os.Getenv("BAIDUFANYI_APP_SECRET")))
+
+	res, err := cli.Translate("hi", baidufanyi.LanguageEn, baidufanyi.LanguageZh)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(res[0].Dst) // output: 你好
+}
+```
