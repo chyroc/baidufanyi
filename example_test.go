@@ -12,5 +12,5 @@ func Example_baidufanyi() {
 
 	res, err := cli.Translate("hi", baidufanyi.LanguageEn, baidufanyi.LanguageZh)
 	fmt.Println(err)
-	fmt.Println(res[0].Dst) // output: 你好
+	fmt.Printf("%#v\n", res) // output: 你好
 }
