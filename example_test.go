@@ -8,7 +8,7 @@ import (
 )
 
 func Example_baidufanyi() {
-	cli := baidufanyi.New(baidufanyi.WithCredential(os.Getenv("BAIDUFANYI_APP_ID"), os.Getenv("BAIDUFANYI_APP_SECRET")))
+	cli := baidufanyi.New(baidufanyi.WithCredential(os.Getenv("APP_ID"), os.Getenv("APP_SECRET")))
 
 	res, err := cli.Translate("hi", baidufanyi.LanguageEn, baidufanyi.LanguageZh)
 	fmt.Println(err)
